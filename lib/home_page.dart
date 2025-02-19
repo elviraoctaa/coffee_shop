@@ -1,6 +1,8 @@
 import 'package:coffee_shop/widget/category.dart';
 import 'package:coffee_shop/widget/coffee_shop.dart';
 import 'package:flutter/material.dart';
+import 'saved_page.dart'; // Pastikan impor ini benar
+import 'profil_page.dart'; // Pastikan impor ini benar
 
 class HomePage extends StatefulWidget {
   final String userName;
@@ -12,6 +14,28 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    if (index == 1) {
+      Navigator.pushNamed(context, '/saved');
+    } else if (index == 2) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProfilPage(
+            userName: widget.userName,
+            userEmail: 'email@example.com',
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +47,9 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.bookmark), label: "Tersimpan"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
         ],
+        currentIndex: _selectedIndex,
         selectedItemColor: Colors.brown,
+        onTap: _onItemTapped,
       ),
       body: SingleChildScrollView(
         child: SafeArea(

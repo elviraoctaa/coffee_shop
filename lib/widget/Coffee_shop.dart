@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../detail_page.dart'; // Pastikan impor ini benar
+import '../detail_page.dart';
 
 class CoffeeShop extends StatelessWidget {
   final String imagePath;

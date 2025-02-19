@@ -21,13 +21,13 @@ class Category extends StatelessWidget {
             width: 60,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10), // Membuat sudut melengkung
+              borderRadius: BorderRadius.circular(10), //  sudut melengkung
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 2,
                   blurRadius: 5,
-                  offset: Offset(0, 3), // Mengatur posisi bayangan
+                  offset: Offset(0, 3), //  posisi bayangan
                 ),
               ],
               image: DecorationImage(

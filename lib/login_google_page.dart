@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // Pastikan import ini sesuai dengan struktur folder Anda
+import 'home_page.dart';
 
 class LoginGooglePage extends StatefulWidget {
   @override
@@ -15,7 +15,7 @@ class _LoginGooglePageState extends State<LoginGooglePage> {
           children: [
             // Gambar background
             Image.asset(
-              "assets/bg.jpg", 
+              "assets/bg.jpg",
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
@@ -73,12 +73,14 @@ class _LoginGooglePageState extends State<LoginGooglePage> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => EmailPasswordLogin()),
+                            MaterialPageRoute(
+                                builder: (context) => EmailPasswordLogin()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.brown,
-                          padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 12),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8),
                           ),
@@ -128,9 +130,10 @@ class _EmailPasswordLoginState extends State<EmailPasswordLogin> {
 
   void _login() {
     if (_formKey.currentState!.validate()) {
-      // Lakukan validasi sederhana
+      // validasi sederhana
       String email = _emailController.text;
-      String userName = email.split('@')[0]; // Ambil bagian sebelum '@' sebagai nama pengguna
+      String userName =
+          email.split('@')[0]; // Ambil bagian sebelum '@' sebagai nama pengguna
 
       Navigator.pushReplacement(
         context,
@@ -218,7 +221,8 @@ class _EmailPasswordLoginState extends State<EmailPasswordLogin> {
                       onPressed: _login,
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.brown,
-                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                       ),
                       child: Text(
                         "Masuk",

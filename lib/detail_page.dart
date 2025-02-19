@@ -220,8 +220,7 @@ class Comment extends StatelessWidget {
                     color: Colors.black, // Warna border
                     width: 3, // Lebar border
                   ),
-                  shape: BoxShape
-                      .circle, // Membuat gambar menjadi bentuk lingkaran
+                  shape: BoxShape.circle, //  gambar menjadi bentuk lingkaran
                 ),
                 child: ClipOval(
                   child: Image.asset(
@@ -230,7 +229,7 @@ class Comment extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 10), // Menambah jarak antara foto dan bintang
+              SizedBox(width: 10), // jarak antara foto dan bintang
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

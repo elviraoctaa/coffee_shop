@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart'; // Pastikan import ini sesuai dengan struktur folder Anda
+import 'home_page.dart';
 
 class EmailPasswordLogin extends StatefulWidget {
   @override
@@ -13,11 +13,11 @@ class _EmailPasswordLoginState extends State<EmailPasswordLogin> {
 
   void _login() {
     if (_formKey.currentState!.validate()) {
-      // Lakukan validasi sederhana
+      //  validasi sederhana
       String email = _emailController.text;
       String password = _passwordController.text;
 
-      // Contoh validasi login (Ganti dengan autentikasi yang sebenarnya)
+      // validasi login
       if (email == "user@gmail.com" && password == "password") {
         Navigator.pushReplacement(
           context,
