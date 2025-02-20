@@ -1,13 +1,14 @@
 import 'package:coffee_shop/widget/category.dart';
 import 'package:coffee_shop/widget/coffee_shop.dart';
 import 'package:flutter/material.dart';
-import 'saved_page.dart'; // Pastikan impor ini benar
-import 'profil_page.dart'; // Pastikan impor ini benar
+import 'package:coffee_shop/saved_page.dart'; // Pastikan impor ini benar
+import 'package:coffee_shop/profil_page.dart'; // Pastikan impor ini benar
 
 class HomePage extends StatefulWidget {
   final String userName;
+  final String userEmail;
 
-  const HomePage({super.key, required this.userName});
+  const HomePage({super.key, required this.userName, required this.userEmail});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -29,7 +30,7 @@ class _HomePageState extends State<HomePage> {
         MaterialPageRoute(
           builder: (context) => ProfilPage(
             userName: widget.userName,
-            userEmail: 'email@example.com',
+            userEmail: widget.userEmail,
           ),
         ),
       );

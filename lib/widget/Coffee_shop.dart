@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../detail_page.dart';
+import '../saved_page.dart'; // Pastikan impor ini benar
 
 class CoffeeShop extends StatelessWidget {
   final String imagePath;
@@ -100,11 +101,9 @@ class CoffeeShop extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: Icon(Icons.bookmark),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/saved');
-                      },
+                      onPressed: () {},
                     ),
-                    SizedBox(height: 16),
+                    SizedBox(width: 16),
                   ],
                 ),
               ],

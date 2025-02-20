@@ -19,39 +19,39 @@ class _ProfilPageState extends State<ProfilPage> {
         title: Text('Profil'),
         backgroundColor: Colors.white,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Container(
+      body: Center(
+        // Menggunakan Center untuk menempatkan elemen di tengah
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment
+                .center, // Menempatkan elemen di tengah secara vertikal
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
                 height: 200,
                 width: 200,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black, width: 5),
-                    shape: BoxShape.circle),
+                  border: Border.all(color: Colors.black, width: 5),
+                  shape: BoxShape.circle,
+                ),
                 child: ClipOval(
                   child: Image.asset(
                     'assets/profil.jpg',
                     fit: BoxFit.cover,
                   ),
-                )),
-            SizedBox(height: 16),
-            Text(
-              widget.userName,
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              widget.userEmail,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey[600],
+              SizedBox(height: 8),
+              Text(
+                widget.userEmail,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[600],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
