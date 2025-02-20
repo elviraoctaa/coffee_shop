@@ -5,7 +5,6 @@ class SavedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
         title: Text('Halaman Tersimpan'),
       ),
       body: Center(

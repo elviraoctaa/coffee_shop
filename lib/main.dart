@@ -1,10 +1,9 @@
 import 'package:coffee_shop/profil_page.dart';
-import 'package:flutter/material.dart';
-import 'detail_page.dart';
-import 'home_page.dart';
-import 'login_google_page.dart' as google;
-import 'email_password.dart' as email;
-import 'saved_page.dart';
+import 'package:coffee_shop/detail_page.dart';
+import 'package:coffee_shop/home_page.dart';
+import 'package:coffee_shop/login_google_page.dart' as google;
+import 'package:coffee_shop/email_password.dart' as email;
+import 'package:coffee_shop/saved_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,7 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => google.LoginGooglePage(),
-        '/homepage': (context) => HomePage(userName: 'User'),
+        '/homepage': (context) => HomePage(
+            userName: 'User', userEmail: 'email@example.com'), // Default value
         '/detail': (context) => DetailPage(
               title: 'Default Title',
               imagePath: 'assets/default.jpg',
@@ -32,8 +32,8 @@ class MyApp extends StatelessWidget {
             ),
         '/login': (context) => email.EmailPasswordLogin(),
         '/saved': (context) => SavedPage(),
-        '/profil': (context) =>
-            ProfilPage(userName: 'User', userEmail: 'email@example.com'),
+        '/profil': (context) => ProfilPage(
+            userName: 'User', userEmail: 'email@example.com'), // Default value
       },
     );
   }

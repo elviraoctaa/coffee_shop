@@ -17,17 +17,24 @@ class _ProfilPageState extends State<ProfilPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profil'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/profil.jpg'),
-            ),
+            Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 5),
+                    shape: BoxShape.circle),
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/profil.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                )),
             SizedBox(height: 16),
             Text(
               widget.userName,

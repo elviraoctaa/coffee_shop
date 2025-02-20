@@ -137,7 +137,12 @@ class _EmailPasswordLoginState extends State<EmailPasswordLogin> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => HomePage(userName: userName)),
+        MaterialPageRoute(
+          builder: (context) => HomePage(
+            userName: userName,
+            userEmail: email,
+          ),
+        ),
       );
     }
   }
