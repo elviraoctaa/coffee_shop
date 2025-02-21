@@ -15,6 +15,16 @@ class _ProfilPageState extends State<ProfilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.bookmark), label: "Tersimpan"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profil"),
+        ],
+        selectedItemColor: Colors.brown,
+      ),
       appBar: AppBar(
         title: Text('Profil'),
         backgroundColor: Colors.white,

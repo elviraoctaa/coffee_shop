@@ -101,7 +101,24 @@ class CoffeeShop extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: Icon(Icons.bookmark),
-                      onPressed: () {},
+                      onPressed: () {
+                        // Simpan data ke halaman tersimpan
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SavedPage(
+                              savedItem: {
+                                'imagePath': imagePath,
+                                'nameshop': nameshop,
+                                'rating': rating,
+                                'time': time,
+                                'address': address,
+                                'description': description,
+                              },
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     SizedBox(width: 16),
                   ],

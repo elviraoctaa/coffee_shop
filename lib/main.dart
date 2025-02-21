@@ -35,11 +35,12 @@ class MyApp extends StatelessWidget {
         '/saved': (context) => SavedPage(
               savedItem: {
                 'imagePath': 'assets/kopi.jpg',
-                'nameshop': 'Default Shop',
-                'rating': '0.0',
+                'nameshop': 'Toko Kopi Annchira',
+                'rating': '5.0',
                 'time': '00:00 - 00:00',
-                'address': 'Default Address',
-                'description': 'Default Description',
+                'address': 'Jl. Raya Salatiga no. 1, Semarang',
+                'description':
+                    'Toko Kopi Annchira menawarkan berbagai macam kopi dengan cita rasa yang khas dan unik. Tempat yang nyaman untuk bersantai dan menikmati kopi.',
               },
             ), // Pastikan rute ini benar
         '/profil': (context) => ProfilPage(
