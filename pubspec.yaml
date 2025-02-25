@@ -10,8 +10,9 @@ environment:
 dependencies:
   flutter: 
     sdk: flutter
+  sqflite: any
+  path: any
 
- 
 
 dev_dependencies:
   flutter_test:

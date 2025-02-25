@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../detail_page.dart';
-import '../saved_page.dart'; // Pastikan impor ini benar
+import '../saved_page.dart';
+import '../models/saved_coffee_shop.dart';
 
 class CoffeeShop extends StatelessWidget {
   final String imagePath;
@@ -96,12 +97,33 @@ class CoffeeShop extends StatelessWidget {
                   child: Text("Lihat Detail"),
                 ),
                 SizedBox(height: 5),
+                // Ikon Bookmark
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     IconButton(
                       icon: Icon(Icons.bookmark),
-                      onPressed: () {},
+                      onPressed: () {
+                        // Simpan data ke halaman tersimpan
+                        final savedCoffeeShop = SavedCoffeeShop(
+                          imagePath: imagePath,
+                          nameshop: nameshop,
+                          rating: rating,
+                          time: time,
+                          address: address,
+                          description: description,
+                        );
+                        // Simpan data ke halaman tersimpan
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SavedPage(),
+                            settings: RouteSettings(
+                              arguments: savedCoffeeShop,
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     SizedBox(width: 16),
                   ],
