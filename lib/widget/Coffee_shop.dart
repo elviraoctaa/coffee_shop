@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../detail_page.dart';
-import '../saved_page.dart';
 import '../models/saved_coffee_shop.dart';
 
 class CoffeeShop extends StatelessWidget {
@@ -114,14 +113,10 @@ class CoffeeShop extends StatelessWidget {
                           description: description,
                         );
                         // Simpan data ke halaman tersimpan
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => SavedPage(),
-                            settings: RouteSettings(
-                              arguments: savedCoffeeShop,
-                            ),
-                          ),
+                          '/saved',
+                          arguments: savedCoffeeShop,
                         );
                       },
                     ),

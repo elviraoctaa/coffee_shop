@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'edit_profil_page.dart';
 
 class ProfilPage extends StatefulWidget {
   final String userName;
@@ -11,12 +12,47 @@ class ProfilPage extends StatefulWidget {
 }
 
 class _ProfilPageState extends State<ProfilPage> {
+  late String _userName;
+  late String _userEmail;
+
+  @override
+  void initState() {
+    super.initState();
+    _userName = widget.userName;
+    _userEmail = widget.userEmail;
+  }
+
+  void _editProfile() async {
+    final result = await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditProfilPage(
+          userName: _userName,
+          userEmail: _userEmail,
+        ),
+      ),
+    );
+
+    if (result != null) {
+      setState(() {
+        _userName = result['userName'];
+        _userEmail = result['userEmail'];
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Profil'),
-        backgroundColor: Colors.brown,
+        backgroundColor: const Color.fromARGB(255, 212, 177, 164),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: _editProfile,
+          ),
+        ],
       ),
       body: Stack(
         children: [
@@ -60,7 +96,7 @@ class _ProfilPageState extends State<ProfilPage> {
                   ),
                   SizedBox(height: 16),
                   Text(
-                    widget.userName,
+                    _userName,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -69,26 +105,10 @@ class _ProfilPageState extends State<ProfilPage> {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    widget.userEmail,
+                    _userEmail,
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white70,
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  ElevatedButton.icon(
-                    onPressed: () {
-                      // Tambahkan logika untuk tombol edit profil
-                    },
-                    icon: Icon(Icons.edit),
-                    label: Text('Edit Profil'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.brown,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                     ),
                   ),
                 ],

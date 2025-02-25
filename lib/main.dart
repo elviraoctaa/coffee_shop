@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:coffee_shop/profil_page.dart';
+import 'package:coffee_shop/profil_page.dart' as profil;
 import 'package:coffee_shop/detail_page.dart';
 import 'package:coffee_shop/home_page.dart';
 import 'package:coffee_shop/login_google_page.dart' as google;
 import 'package:coffee_shop/email_password.dart' as email;
 import 'package:coffee_shop/saved_page.dart';
-import 'package:coffee_shop/providers/saved_coffee_shop_provider.dart';
+import 'package:coffee_shop/edit_profil_page.dart' as editProfil;
 
 void main() {
   runApp(MyApp());
@@ -33,12 +33,10 @@ class MyApp extends StatelessWidget {
               description: '',
             ),
         '/login': (context) => email.EmailPasswordLogin(),
-        '/saved': (context) => SavedPage(
-        savedItem: {
-        
-        },
-        ),
-        '/profil': (context) => ProfilPage(
+        '/saved': (context) => SavedPage(),
+        '/profil': (context) => profil.ProfilPage(
+            userName: 'User', userEmail: 'email@example.com'), // Default value
+        '/edit_profil': (context) => editProfil.EditProfilPage(
             userName: 'User', userEmail: 'email@example.com'), // Default value
       },
     );
