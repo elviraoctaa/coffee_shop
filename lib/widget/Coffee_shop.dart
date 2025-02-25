@@ -25,8 +25,7 @@ class CoffeeShop extends StatelessWidget {
     return Card(
       margin: EdgeInsets.all(10),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
+        borderRadius: BorderRadius.circular(15)),
       elevation: 5,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
