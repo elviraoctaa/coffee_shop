@@ -45,8 +45,13 @@ class _ProfilPageState extends State<ProfilPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
-        backgroundColor: Colors.brown,
+        title: Text(
+          'Profil',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.brown.shade200,
         actions: [
           IconButton(
             icon: Icon(Icons.edit),
@@ -59,7 +64,7 @@ class _ProfilPageState extends State<ProfilPage> {
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.brown.shade200, Colors.brown.shade600],
+                colors: [Colors.brown.shade200, Colors.blueGrey],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
@@ -80,7 +85,7 @@ class _ProfilPageState extends State<ProfilPage> {
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.white.withOpacity(0.5),
                           spreadRadius: 5,
                           blurRadius: 7,
                           offset: Offset(0, 3),

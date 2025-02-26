@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'edit_profil_page.dart';
+import 'package:coffee_shop/edit_profil_page.dart';
 
 class ProfilPage extends StatefulWidget {
   final String userName;
@@ -45,8 +45,11 @@ class _ProfilPageState extends State<ProfilPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profil'),
-        backgroundColor: Colors.brown,
+        title: Text('Profil',
+        style: TextStyle(
+                    color: Colors.white,
+        )),
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -59,7 +62,7 @@ class _ProfilPageState extends State<ProfilPage> {
               onPressed: _editProfile,
               child: Text('Edit Profil'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
+                backgroundColor: Colors.white,
               ),
             ),
           ],
@@ -110,30 +113,52 @@ class _EditProfilPageState extends State<EditProfilPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Profil'),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.brown.shade200,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _nameController,
-              decoration: InputDecoration(labelText: 'Nama'),
-            ),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(labelText: 'Email'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _saveProfile,
-              child: Text('Simpan'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown,
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.brown.shade200, Colors.blueGrey],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                TextField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    labelText: 'Nama',
+                    labelStyle: TextStyle(color: Colors.white),
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                TextField(
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    labelStyle: TextStyle(color: Colors.white),
+                  ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: _saveProfile,
+                  child: Text('Simpan'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    iconColor: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
