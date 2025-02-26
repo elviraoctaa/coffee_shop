@@ -110,7 +110,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Edit Profil'),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.brown,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -129,7 +129,7 @@ class _EditProfilPageState extends State<EditProfilPage> {
               onPressed: _saveProfile,
               child: Text('Simpan'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.brown,
               ),
             ),
           ],
