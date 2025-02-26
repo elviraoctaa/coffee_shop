@@ -9,7 +9,7 @@ class CoffeeShop extends StatelessWidget {
   final String time;
   final String address;
   final String description;
-  final Function(SavedCoffeeShop) onBookmark;
+  final Function(SavedCoffeeShop) onBookMark;
 
   const CoffeeShop({
     required this.imagePath,
@@ -18,7 +18,7 @@ class CoffeeShop extends StatelessWidget {
     required this.time,
     required this.address,
     required this.description,
-    required this.onBookmark,
+    required this.onBookMark,
     super.key,
   });
 
@@ -111,10 +111,10 @@ class CoffeeShop extends StatelessWidget {
                           rating: rating,
                           time: time,
                           address: address,
-                          description: description,
+                          description: description, onBookMark: 'Toko Kopi Annchira menawarkan berbagai macam kopi dengan cita rasa yang khas dan unik. Tempat yang nyaman untuk bersantai dan menikmati kopi.',
                         );
                         // Panggil callback untuk menyimpan data
-                        onBookmark(savedCoffeeShop);
+                        onBookMark(savedCoffeeShop);
                       },
                     ),
                     SizedBox(width: 16),

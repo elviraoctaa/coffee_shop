@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/saved_coffee_shop.dart';
-import '../widget/coffee_shop.dart';
+import 'models/saved_coffee_shop.dart';
+import 'package:coffee_shop/widget/Coffee_shop.dart';
+
 
 class SavedPage extends StatelessWidget {
   @override
@@ -23,8 +24,8 @@ class SavedPage extends StatelessWidget {
                   time: savedCoffeeShop.time,
                   address: savedCoffeeShop.address,
                   description: savedCoffeeShop.description,
-                  onBookmark: (SavedCoffeeShop coffeeShop) {}, // No-op
-                );
+                  onBookMark: (SavedCoffeeShop coffeeShop) {}, // No-op
+                                  );
               },
             )
           : Center(
