@@ -5,7 +5,6 @@ class SavedCoffeeShop {
   final String time;
   final String address;
   final String description;
-  final String onBookMark;
 
   SavedCoffeeShop({
     required this.imagePath,
@@ -14,6 +13,5 @@ class SavedCoffeeShop {
     required this.time,
     required this.address,
     required this.description,
-    required this.onBookMark
   });
 }
