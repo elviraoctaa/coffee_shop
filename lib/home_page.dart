@@ -1,8 +1,8 @@
 import 'package:coffee_shop/widget/category.dart';
-import 'package:coffee_shop/widget/coffee_shop.dart';
+import 'package:coffee_shop/widget/Coffee_shop.dart';
 import 'package:flutter/material.dart';
-import 'package:coffee_shop/saved_page.dart'; // Pastikan impor ini benar
-import 'package:coffee_shop/profil_page.dart'; // Pastikan impor ini benar
+import 'package:coffee_shop/profil_page.dart';
+import '../models/saved_coffee_shop.dart';
 
 class HomePage extends StatefulWidget {
   final String userName;
@@ -16,6 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  List<SavedCoffeeShop> savedCoffeeShops = [];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -23,7 +24,11 @@ class _HomePageState extends State<HomePage> {
     });
 
     if (index == 1) {
-      Navigator.pushNamed(context, '/saved');
+      Navigator.pushNamed(
+        context,
+        '/saved',
+        arguments: savedCoffeeShops,
+      );
     } else if (index == 2) {
       Navigator.push(
         context,
@@ -35,6 +40,12 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     }
+  }
+
+  void _saveCoffeeShop(SavedCoffeeShop coffeeShop) {
+    setState(() {
+      savedCoffeeShops.add(coffeeShop);
+    });
   }
 
   @override
@@ -62,7 +73,13 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     height: 140,
                     width: double.infinity,
-                    color: Colors.brown,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Colors.brown.shade200, Colors.blueGrey],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                      ),
+                    ),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,6 +181,7 @@ class _HomePageState extends State<HomePage> {
                 address: "Jl. Raya Salatiga no. 1, Semarang",
                 description:
                     "Toko Kopi Annchira menawarkan berbagai macam kopi dengan cita rasa yang khas dan unik. Tempat yang nyaman untuk bersantai dan menikmati kopi.",
+                onBookmark: _saveCoffeeShop,
               ),
               CoffeeShop(
                 imagePath: "assets/ice.jpg",
@@ -173,6 +191,7 @@ class _HomePageState extends State<HomePage> {
                 address: "Jl. Raya Semarang no. 2, Semarang",
                 description:
                     "Kopi Sahara menawarkan berbagai macam kopi dengan cita rasa yang khas dan unik. Tempat yang nyaman untuk bersantai dan menikmati kopi.",
+                onBookmark: _saveCoffeeShop,
               ),
               CoffeeShop(
                 imagePath: "assets/latte.jpg",
@@ -182,6 +201,7 @@ class _HomePageState extends State<HomePage> {
                 address: "Jl. Raya Yogyakarta no. 3, Yogyakarta",
                 description:
                     "Coffe Latte menyajikan berbagai macam kopi latte dengan rasa yang lezat dan nikmat. Tempat yang cocok untuk berkumpul bersama teman dan keluarga.",
+                onBookmark: _saveCoffeeShop,
               ),
             ],
           ),

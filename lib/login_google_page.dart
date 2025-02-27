@@ -96,7 +96,7 @@ class _LoginGooglePageState extends State<LoginGooglePage> {
                             ),
                             SizedBox(width: 10),
                             Text(
-                              "Login dengan Email",
+                              "Login dengan Gmail",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -190,21 +190,21 @@ class _EmailPasswordLoginState extends State<EmailPasswordLogin> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    TextFormField(
-                      controller: _emailController,
-                      decoration: InputDecoration(
-                        labelText: "Email",
-                        border: OutlineInputBorder(),
-                        prefixIcon: Icon(Icons.email),
-                      ),
-                      keyboardType: TextInputType.emailAddress,
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Email tidak boleh kosong';
-                        }
-                        return null;
-                      },
-                    ),
+ TextFormField(
+  controller: _emailController,
+  decoration: InputDecoration(
+    labelText: "Gmail",
+    border: OutlineInputBorder(),
+    prefixIcon: Icon(Icons.alternate_email), // Ubah ikon di sini
+  ),
+  keyboardType: TextInputType.emailAddress,
+  validator: (value) {
+    if (value == null || value.isEmpty) {
+      return 'Gmail tidak boleh kosong';
+    }
+    return null;
+  },
+),
                     SizedBox(height: 20),
                     TextFormField(
                       controller: _passwordController,

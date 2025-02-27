@@ -9,6 +9,7 @@ class CoffeeShop extends StatelessWidget {
   final String time;
   final String address;
   final String description;
+  final Function(SavedCoffeeShop) onBookmark;
 
   const CoffeeShop({
     required this.imagePath,
@@ -17,6 +18,7 @@ class CoffeeShop extends StatelessWidget {
     required this.time,
     required this.address,
     required this.description,
+    required this.onBookmark,
     super.key,
   });
 
@@ -111,12 +113,8 @@ class CoffeeShop extends StatelessWidget {
                           address: address,
                           description: description,
                         );
-                        // Simpan data ke halaman tersimpan
-                        Navigator.pushNamed(
-                          context,
-                          '/saved',
-                          arguments: savedCoffeeShop,
-                        );
+                        // Panggil callback untuk menyimpan data
+                        onBookmark(savedCoffeeShop);
                       },
                     ),
                     SizedBox(width: 16),
